@@ -11,13 +11,19 @@
     <body>
         <div id="app">
             <div class="list-container">
-                <input type="text" v-model="newElement.text">
-                <button @click="addElement">Aggiungi elemento alla lista!</button>
+                <div class="addSection">
+                    <h1>Lista della spesa:</h1>
+                    <input type="text" v-model="newElement.text" @keyup.enter="addElement">
+                    <button @click="addElement">Aggiungi</button>
+                </div>
+                
                 <ul>
-                    <li v-for="(element, index) in list">
+                    <li v-for="(element, index) in list" class="my-li">
                         <span :class="(element.done == true)?'textDecoration':''">{{element.text}}</span>
-                        <span @click="deleteElement(index)"><i class="fa-solid fa-eraser"></i></span>
-                        <input type="checkbox" @click="checkElement(element)">
+                        <div>
+                            <span @click="deleteElement(index)"><i class="fa-solid fa-eraser"></i></span>
+                            <input class="checkbox" type="checkbox" @click="checkElement(element)">
+                        </div>
                     </li>
                 </ul>
             </div>

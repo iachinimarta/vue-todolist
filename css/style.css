@@ -1,3 +1,42 @@
-.textDecoration {
-    text-decoration: line-through;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+html {
+    font-size: 18px;
+}
+
+.list-container {
+    text-align: center;
+    padding-top: 30px;
+    background-color: #bae8e8;
+    height: 100vh;
+}
+
+.addSection {
+    width: 500px;
+    margin: auto;
+    background-color: #ffd803;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.textDecoration {
+    text-decoration: line-through 2px #007AFF;
+}
+
+ul {
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+
+}
+.my-li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #8F8F9D;
+    margin-bottom: 10px;
+}
+

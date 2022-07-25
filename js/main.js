@@ -1,12 +1,8 @@
 const app = new Vue ({
     el: "#app",
     data: {
-        list: [
-            {
-                text: "prova",
-                done: false
-            },
-        ],
+        list: [],
+
         newElement: {
             text: '',
             done: false
@@ -19,15 +15,23 @@ const app = new Vue ({
         },
 
         addElement() {
-            this.list.push({
-                text: this.newElement.text,
-                done: false
-            });
-            this.newElement.text = '';
+            if (this.newElement.text == "") {
+                alert("Inserisci un elemento valido!");
+            } else {
+                this.list.push({
+                    text: this.newElement.text,
+                    done: false
+                });
+                this.newElement.text = '';
+            }
         },
 
         checkElement(element) {
-            element.done = true;
+            if (element.done == false){
+                element.done = true
+            } else if (element.done == true) {
+                element.done = false
+            }
         }
     }
 })
