@@ -34,4 +34,4 @@ const app = new Vue ({
             }
         }
     }
-})
+});
