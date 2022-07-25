@@ -14,9 +14,10 @@
                 <input type="text" v-model="newElement.text">
                 <button @click="addElement">Aggiungi elemento alla lista!</button>
                 <ul>
-                    <li v-for="(element, index) in list" :class="(element.done == true)?'textDecoration':''">
-                        {{element.text}}
+                    <li v-for="(element, index) in list">
+                        <span :class="(element.done == true)?'textDecoration':''">{{element.text}}</span>
                         <span @click="deleteElement(index)"><i class="fa-solid fa-eraser"></i></span>
+                        <input type="checkbox" @click="checkElement(element)">
                     </li>
                 </ul>
             </div>

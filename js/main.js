@@ -19,7 +19,15 @@ const app = new Vue ({
         },
 
         addElement() {
-            this.list.push(this.newElement);
+            this.list.push({
+                text: this.newElement.text,
+                done: false
+            });
+            this.newElement.text = '';
+        },
+
+        checkElement(element) {
+            element.done = true;
         }
     }
 })
