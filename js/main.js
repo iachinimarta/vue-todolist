@@ -4,11 +4,22 @@ const app = new Vue ({
         list: [
             {
                 text: "prova",
-                done: true
+                done: false
             },
         ],
+        newElement: {
+            text: '',
+            done: false
+        }
     },
+    
     methods: {
-        
+        deleteElement(index) {
+            this.list.splice(index);
+        },
+
+        addElement() {
+            this.list.push(this.newElement);
+        }
     }
 })
