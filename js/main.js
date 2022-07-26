@@ -11,13 +11,11 @@ const app = new Vue ({
     
     methods: {
         deleteElement(index) {
-            this.list.splice(index);
+            this.list.splice(index, 1);
         },
 
         addElement() {
-            if (this.newElement.text == "") {
-                alert("Inserisci un elemento valido!");
-            } else {
+            if (!this.newElement.text == "") {
                 this.list.push({
                     text: this.newElement.text,
                     done: false
